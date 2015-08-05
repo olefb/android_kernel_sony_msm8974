@@ -9,6 +9,7 @@ NEWLINE=$2
 DEVICES=(
          "cm_rhine_amami_row_defconfig"
          "cm_rhine_honami_row_defconfig"
+         "cm_rhine_togari_row_defconfig"
          "cm_shinano_sirius_defconfig"
          "cm_shinano_leo_defconfig"
          "cm_shinano_aries_defconfig"
