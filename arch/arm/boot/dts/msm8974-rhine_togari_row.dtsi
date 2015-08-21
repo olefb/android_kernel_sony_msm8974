@@ -83,10 +83,6 @@
 			wakeup_gesture_support = <0>;
 			wakeup_gesture_timeout = <0>;
 		};
-
-		atmel_mxt_ts@4a {
-			status = "disabled";
-		};
 	};
 
 	/* BLSP4 */
