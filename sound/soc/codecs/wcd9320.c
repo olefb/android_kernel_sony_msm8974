@@ -3484,7 +3484,7 @@ static int taiko_hph_pa_event(struct snd_soc_dapm_widget *w,
 		taiko_write(codec, TAIKO_A_RX_HPH_R_GAIN, 62);
 		// This increases the volume back to 'normal'
 		taiko_write(codec, TAIKO_A_CDC_RX1_VOL_CTL_B2_CTL, 12);
-		taiko_write(codec, TAIKO_A_CDC_RX1_VOL_CTL_B2_CTL, 12);
+		taiko_write(codec, TAIKO_A_CDC_RX2_VOL_CTL_B2_CTL, 12);
 
 		break;
 
