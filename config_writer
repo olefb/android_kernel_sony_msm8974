@@ -14,6 +14,8 @@ DEVICES=(
          "cm_shinano_aries_defconfig"
          "cm_shinano_castor_defconfig"
          "cm_shinano_castor_windy_defconfig"
+         "cm_shinano_scorpion_defconfig"
+         "cm_shinano_scorpion_windy_defconfig"
         )
 
 if( [ ! -z $OLDLINE ] && [ ! -z $NEWLINE ]  );
