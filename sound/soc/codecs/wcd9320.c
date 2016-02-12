@@ -3429,12 +3429,13 @@ err:
 
 }
 
-
+#ifdef CONFIG_SOUND_STATIC_NOISE_FIX
 #ifndef CONFIG_SOUND_CONTROL_HAX_3_GPL
 static
 #endif
 int taiko_write(struct snd_soc_codec *codec, unsigned int reg,
 	unsigned int value);
+#endif
 
 static int taiko_hph_pa_event(struct snd_soc_dapm_widget *w,
 			      struct snd_kcontrol *kcontrol, int event)
@@ -3479,12 +3480,14 @@ static int taiko_hph_pa_event(struct snd_soc_dapm_widget *w,
 						 WCD9XXX_CLSH_REQ_ENABLE,
 						 WCD9XXX_CLSH_EVENT_POST_PA);
 
+#ifdef CONFIG_SOUND_STATIC_NOISE_FIX
 		// This lowers the volume and decreases the noise level massively
 		taiko_write(codec, TAIKO_A_RX_HPH_L_GAIN, 62);
 		taiko_write(codec, TAIKO_A_RX_HPH_R_GAIN, 62);
 		// This increases the volume back to 'normal'
 		taiko_write(codec, TAIKO_A_CDC_RX1_VOL_CTL_B2_CTL, 12);
 		taiko_write(codec, TAIKO_A_CDC_RX2_VOL_CTL_B2_CTL, 12);
+#endif
 
 		break;
 
@@ -4299,7 +4302,7 @@ extern unsigned int snd_hax_cache_read(unsigned int);
 extern void snd_hax_cache_write(unsigned int, unsigned int);
 #endif
 
-#ifndef CONFIG_SOUND_CONTROL_HAX_3_GPL 
+#ifndef CONFIG_SOUND_CONTROL_HAX_3_GPL
 static
 #endif
 unsigned int taiko_read(struct snd_soc_codec *codec,
